@@ -1,0 +1,35 @@
+{
+	"name": "array.prototype.reduce",
+	"version": "0.0.0",
+	"description": "An ES5 spec-compliant `Array.prototype.reduce` shim/polyfill/replacement that works as far down as ES3.",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/es-shims/Array.prototype.reduce.git"
+	},
+	"keywords": [
+		"Array.prototype.reduce",
+		"reduce",
+		"array",
+		"ES5",
+		"shim",
+		"polyfill",
+		"es-shim API"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/es-shims/Array.prototype.reduce/issues"
+	},
+	"homepage": "https://github.com/es-shims/Array.prototype.reduce#readme",
+	"dependencies": {
+	},
+	"devDependencies": {
+	}
+}
