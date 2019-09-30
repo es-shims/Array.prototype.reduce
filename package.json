@@ -7,7 +7,17 @@
 		"test": "test"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"prelint": "evalmd README.md",
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only",
+		"posttest": "npx aud",
+		"tests-only": "es-shim-api --bound && npm run test:shimmed && npm run test:module && npm run test:implementation",
+		"test:implementation": "node test/implementation",
+		"test:shimmed": "node test/shimmed",
+		"test:module": "node test/index",
+		"testling": "npx testling --html > test.html",
+		"coverage": "covert test/*.js"
 	},
 	"repository": {
 		"type": "git",
@@ -28,8 +38,20 @@
 		"url": "https://github.com/es-shims/Array.prototype.reduce/issues"
 	},
 	"homepage": "https://github.com/es-shims/Array.prototype.reduce#readme",
+	"engines": {
+		"node": ">= 0.4"
+	},
 	"dependencies": {
 	},
 	"devDependencies": {
+		"@es-shims/api": "^2.1.2",
+		"@ljharb/eslint-config": "^14.1.0",
+		"covert": "^1.1.1",
+		"eslint": "^6.4.0",
+		"evalmd": "^0.0.19",
+		"functions-have-names": "^1.1.1",
+		"has-strict-mode": "^1.0.0",
+		"is-string": "^1.0.4",
+		"tape": "^4.11.0"
 	}
 }
