@@ -1,6 +1,12 @@
 'use strict';
 
-var ES = require('es-abstract/es2019');
+var Call = require('es-abstract/2019/Call');
+var Get = require('es-abstract/2019/Get');
+var HasProperty = require('es-abstract/2019/HasProperty');
+var IsCallable = require('es-abstract/2019/IsCallable');
+var ToObject = require('es-abstract/2019/ToObject');
+var ToString = require('es-abstract/2019/ToString');
+var ToUint32 = require('es-abstract/2019/ToUint32');
 var bind = require('function-bind');
 var isString = require('is-string');
 
@@ -11,12 +17,12 @@ var splitString = boxedString[0] !== 'a' || !(0 in boxedString);
 var strSplit = bind.call(Function.call, String.prototype.split);
 
 module.exports = function reduce(callbackfn) {
-	var O = ES.ToObject(this);
+	var O = ToObject(this);
 	var self = splitString && isString(O) ? strSplit(O, '') : O;
-	var len = ES.ToUint32(ES.Get(self, 'length'));
+	var len = ToUint32(Get(self, 'length'));
 
 	// If no callback function or if callback is not a callable function
-	if (!ES.IsCallable(callbackfn)) {
+	if (!IsCallable(callbackfn)) {
 		throw new TypeError('Array.prototype.reduce callback must be a function');
 	}
 
@@ -33,21 +39,21 @@ module.exports = function reduce(callbackfn) {
 	} else {
 		kPresent = false;
 		while (!kPresent && k < len) {
-			Pk = ES.ToString(k);
-			kPresent = ES.HasProperty(O, Pk);
+			Pk = ToString(k);
+			kPresent = HasProperty(O, Pk);
 			if (kPresent) {
-				accumulator = ES.Get(O, Pk);
+				accumulator = Get(O, Pk);
 			}
 			k += 1;
 		}
 	}
 
 	while (k < len) {
-		Pk = ES.ToString(k);
-		kPresent = ES.HasProperty(O, Pk);
+		Pk = ToString(k);
+		kPresent = HasProperty(O, Pk);
 		if (kPresent) {
-			var kValue = ES.Get(O, Pk);
-			accumulator = ES.Call(callbackfn, void undefined, [accumulator, kValue, k, O]);
+			var kValue = Get(O, Pk);
+			accumulator = Call(callbackfn, void undefined, [accumulator, kValue, k, O]);
 		}
 		k += 1;
 	}
