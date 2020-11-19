@@ -1,20 +1,20 @@
 'use strict';
 
-var Call = require('es-abstract/2019/Call');
-var Get = require('es-abstract/2019/Get');
-var HasProperty = require('es-abstract/2019/HasProperty');
-var IsCallable = require('es-abstract/2019/IsCallable');
-var ToObject = require('es-abstract/2019/ToObject');
-var ToString = require('es-abstract/2019/ToString');
-var ToUint32 = require('es-abstract/2019/ToUint32');
-var bind = require('function-bind');
+var Call = require('es-abstract/2020/Call');
+var Get = require('es-abstract/2020/Get');
+var HasProperty = require('es-abstract/2020/HasProperty');
+var IsCallable = require('es-abstract/2020/IsCallable');
+var ToObject = require('es-abstract/2020/ToObject');
+var ToString = require('es-abstract/2020/ToString');
+var ToUint32 = require('es-abstract/2020/ToUint32');
+var callBound = require('call-bind/callBound');
 var isString = require('is-string');
 
 // Check failure of by-index access of string characters (IE < 9) and failure of `0 in boxedString` (Rhino)
 var boxedString = Object('a');
 var splitString = boxedString[0] !== 'a' || !(0 in boxedString);
 
-var strSplit = bind.call(Function.call, String.prototype.split);
+var strSplit = callBound('%String.prototype.split%');
 
 module.exports = function reduce(callbackfn) {
 	var O = ToObject(this);

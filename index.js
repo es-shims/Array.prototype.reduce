@@ -1,24 +1,28 @@
 'use strict';
 
 var define = require('define-properties');
-var RequireObjectCoercible = require('es-abstract/2019/RequireObjectCoercible');
+var RequireObjectCoercible = require('es-abstract/2020/RequireObjectCoercible');
+var callBind = require('call-bind');
+var callBound = require('call-bind/callBound');
 
 var implementation = require('./implementation');
+
 var getPolyfill = require('./polyfill');
-var polyfill = getPolyfill();
+var polyfill = callBind.apply(getPolyfill());
+
 var shim = require('./shim');
 
-var slice = Array.prototype.slice;
+var $slice = callBound('%Array.prototype.slice%');
 
 // eslint-disable-next-line no-unused-vars
-var boundReduceShim = function reduce(array, callbackfn) {
+var boundShim = function reduce(array, callbackfn) {
 	RequireObjectCoercible(array);
-	return polyfill.apply(array, slice.call(arguments, 1));
+	return polyfill(array, $slice(arguments, 1));
 };
-define(boundReduceShim, {
+define(boundShim, {
 	getPolyfill: getPolyfill,
 	implementation: implementation,
 	shim: shim
 });
 
-module.exports = boundReduceShim;
+module.exports = boundShim;
