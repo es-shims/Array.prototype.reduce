@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.2](https://github.com/es-shims/Array.prototype.reduce/compare/v1.0.1...v1.0.2) - 2020-11-19
+
+### Commits
+
+- [Tests] migrate tests to Github Actions [`397cded`](https://github.com/es-shims/Array.prototype.reduce/commit/397cded4df1918965948f178060a9842d91f11ed)
+- [meta] do not publish github action workflow files [`7ac0e80`](https://github.com/es-shims/Array.prototype.reduce/commit/7ac0e80845bf9dcf97d36ebe0fea1f11f4faf0ff)
+- [Deps] update `es-abstract`; use `call-bind` where applicable; remove `function-bind` [`3470ed1`](https://github.com/es-shims/Array.prototype.reduce/commit/3470ed1ed6474c92dcc547929ab101322de9ee12)
+- [Tests] run `nyc` on all tests [`6efa838`](https://github.com/es-shims/Array.prototype.reduce/commit/6efa838535903d2260b46bcc73a7e0c8c8c22e18)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`eae319e`](https://github.com/es-shims/Array.prototype.reduce/commit/eae319ef283bad89ab807e73c931eb714ce06279)
+- [actions] add "Allow Edits" workflow [`87ed4f8`](https://github.com/es-shims/Array.prototype.reduce/commit/87ed4f86ea68a88bd6e4b72c5ee6cccf2ac6ce02)
+- [Tests] add `implementation` test; run `es-shim-api` in postlint; use `tape` runner [`9bfea52`](https://github.com/es-shims/Array.prototype.reduce/commit/9bfea523756dbd8dc9308916145f8d3a2fe46103)
+- [Dev Deps] update `@ljharb/eslint-config`, `tape`, `has-strict-mode`, `functions-have-names` [`fdac028`](https://github.com/es-shims/Array.prototype.reduce/commit/fdac028b1e46873180cfae102d409d148fb3e6f7)
+- [Dev Deps] update `auto-changelog`, `tape` [`f595f6a`](https://github.com/es-shims/Array.prototype.reduce/commit/f595f6a31eabeef2d92895855c818507fe6e0219)
+- [Dev Deps] update `auto-changelog`; add `aud` [`9d3d84c`](https://github.com/es-shims/Array.prototype.reduce/commit/9d3d84c030f0350f5e98bd320ead76392b252240)
+- [actions] switch Automatic Rebase workflow to `pull_request_target` event [`2c05596`](https://github.com/es-shims/Array.prototype.reduce/commit/2c055961d27ebcde19f5dde83e4e14eab945b924)
+- [Tests] only audit prod deps [`89c3610`](https://github.com/es-shims/Array.prototype.reduce/commit/89c36102d528b1b17a56cf7ef0395cec83196e6f)
+- [Deps] update `es-abstract` [`65bdd68`](https://github.com/es-shims/Array.prototype.reduce/commit/65bdd68d942a2d82e9c5548c25944b2bebb9a52d)
+- [Deps] update `es-abstract` [`ad19dd9`](https://github.com/es-shims/Array.prototype.reduce/commit/ad19dd9a1008a05381bab87b79444cc93b28ac3b)
+- [Dev Deps] update `eslint` [`ce28412`](https://github.com/es-shims/Array.prototype.reduce/commit/ce28412065431e3dc21010e6c7c981739676161e)
+
 ## [v1.0.1](https://github.com/es-shims/Array.prototype.reduce/compare/v1.0.0...v1.0.1) - 2019-12-20
 
 ### Commits
