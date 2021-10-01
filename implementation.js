@@ -1,12 +1,12 @@
 'use strict';
 
-var Call = require('es-abstract/2020/Call');
-var Get = require('es-abstract/2020/Get');
-var HasProperty = require('es-abstract/2020/HasProperty');
-var IsCallable = require('es-abstract/2020/IsCallable');
-var ToObject = require('es-abstract/2020/ToObject');
-var ToString = require('es-abstract/2020/ToString');
-var ToUint32 = require('es-abstract/2020/ToUint32');
+var Call = require('es-abstract/2021/Call');
+var Get = require('es-abstract/2021/Get');
+var HasProperty = require('es-abstract/2021/HasProperty');
+var IsCallable = require('es-abstract/2021/IsCallable');
+var ToObject = require('es-abstract/2021/ToObject');
+var ToString = require('es-abstract/2021/ToString');
+var ToUint32 = require('es-abstract/2021/ToUint32');
 var callBound = require('call-bind/callBound');
 var isString = require('is-string');
 
