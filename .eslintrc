@@ -8,7 +8,6 @@
 		"complexity": [2, 12],
 		"id-length": 0,
 		"max-statements-per-line": [2, { "max": 2 }],
-		"max-statements": [2, 27],
 		"new-cap": [2, { "capIsNewExceptions": ["RequireObjectCoercible", "ToObject", "ToUint32", "IsCallable", "ArraySpeciesCreate", "HasProperty", "Get", "ToString", "Call", "CreateDataPropertyOrThrow"] }],
 		"no-magic-numbers": 0,
 	},
