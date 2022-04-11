@@ -191,4 +191,21 @@ module.exports = function (reduce, t) {
 
 		st.end();
 	});
+
+	t.test('test262: 15.4.4.21-3-12', function (st) {
+		var obj = {
+			1: 11,
+			2: 9,
+			length: '-4294967294'
+		};
+
+		var cb = function callbackfn(prevVal, curVal, idx, object) {
+			st.equal(object, obj, '4th argument is receiver');
+			return curVal === 11 && idx === 1;
+		};
+
+		st.equal(reduce(obj, cb, 1), 1, 'reduce(obj, callbackfn, 1)');
+
+		st.end();
+	});
 };

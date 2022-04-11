@@ -4,9 +4,9 @@ var Call = require('es-abstract/2021/Call');
 var Get = require('es-abstract/2021/Get');
 var HasProperty = require('es-abstract/2021/HasProperty');
 var IsCallable = require('es-abstract/2021/IsCallable');
+var LengthOfArrayLike = require('es-abstract/2021/LengthOfArrayLike');
 var ToObject = require('es-abstract/2021/ToObject');
 var ToString = require('es-abstract/2021/ToString');
-var ToUint32 = require('es-abstract/2021/ToUint32');
 var callBound = require('call-bind/callBound');
 var isString = require('is-string');
 
@@ -19,7 +19,7 @@ var strSplit = callBound('%String.prototype.split%');
 module.exports = function reduce(callbackfn) {
 	var O = ToObject(this);
 	var self = splitString && isString(O) ? strSplit(O, '') : O;
-	var len = ToUint32(Get(self, 'length'));
+	var len = LengthOfArrayLike(self);
 
 	// If no callback function or if callback is not a callable function
 	if (!IsCallable(callbackfn)) {
