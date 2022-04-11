@@ -10,6 +10,8 @@ var ToString = require('es-abstract/2021/ToString');
 var callBound = require('call-bind/callBound');
 var isString = require('is-string');
 
+var $TypeError = TypeError;
+
 // Check failure of by-index access of string characters (IE < 9) and failure of `0 in boxedString` (Rhino)
 var boxedString = Object('a');
 var splitString = boxedString[0] !== 'a' || !(0 in boxedString);
@@ -23,11 +25,11 @@ module.exports = function reduce(callbackfn) {
 
 	// If no callback function or if callback is not a callable function
 	if (!IsCallable(callbackfn)) {
-		throw new TypeError('Array.prototype.reduce callback must be a function');
+		throw new $TypeError('Array.prototype.reduce callback must be a function');
 	}
 
 	if (len === 0 && arguments.length < 2) {
-		throw new TypeError('reduce of empty array with no initial value');
+		throw new $TypeError('reduce of empty array with no initial value');
 	}
 
 	var k = 0;
@@ -45,6 +47,9 @@ module.exports = function reduce(callbackfn) {
 				accumulator = Get(O, Pk);
 			}
 			k += 1;
+		}
+		if (!kPresent) {
+			throw new $TypeError('reduce of empty array with no initial value');
 		}
 	}
 
