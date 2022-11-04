@@ -1,6 +1,6 @@
 {
 	"name": "array.prototype.reduce",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "An ES5 spec-compliant `Array.prototype.reduce` shim/polyfill/replacement that works as far down as ES3.",
 	"main": "index.js",
 	"directories": {
