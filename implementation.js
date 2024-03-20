@@ -11,8 +11,7 @@ var ToString = require('es-abstract/2023/ToString');
 var callBound = require('call-bind/callBound');
 var isString = require('is-string');
 var $Object = require('es-object-atoms');
-
-var $TypeError = TypeError;
+var $TypeError = require('es-errors/type');
 
 // Check failure of by-index access of string characters (IE < 9) and failure of `0 in boxedString` (Rhino)
 var boxedString = $Object('a');
